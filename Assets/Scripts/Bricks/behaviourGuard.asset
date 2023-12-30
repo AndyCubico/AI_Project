@@ -56,7 +56,7 @@ MonoBehaviour:
     <inputValues>\r\n          <entry name=\"area\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"Floor\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
-    <ConditionEvalNode id=\"24\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"Perception/IsTargetCloseGuard\">\r\n     
+    <ConditionEvalNode id=\"24\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"Perception/IsTargetCloseGuard\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"target\" />\r\n          <entry name=\"closeDistance\"
     type=\"System.Single\" isBlackboard=\"False\" value=\"15\" />\r\n        </inputValues>\r\n     
@@ -65,7 +65,7 @@ MonoBehaviour:
     <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"target\" />\r\n        </inputValues>\r\n     
     </inputParams>\r\n      <outputParams />\r\n      <localParams />\r\n    </ActionNode>\r\n   
-    <ConditionEvalNode id=\"26\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"AlwaysTrue\">\r\n     
+    <ConditionEvalNode id=\"26\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"AlwaysTrue\">\r\n     
     <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
     <ActionNode id=\"25\" action=\"Navigation/MoveToRandomPosition\">\r\n      <inputParams>\r\n       
     <inputValues>\r\n          <entry name=\"area\" type=\"UnityEngine.GameObject\"
