@@ -39,7 +39,7 @@ namespace BBUnity.Conditions
             RaycastHit hit;
             if (Physics.Raycast(gameObject.transform.position + new Vector3(0, 0.1f, 0), dir, out hit))
             {
-                return hit.collider.gameObject == target && Vector3.Angle(dir, gameObject.transform.forward) < angle * 0.5f;
+                return hit.collider.gameObject == target && Vector3.Angle(dir, gameObject.transform.forward) < angle;
             }
             return false;
 		}
