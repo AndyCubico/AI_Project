@@ -28,32 +28,32 @@ public class zombieMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		Collider[] colliders = Physics.OverlapSphere(transform.position, frustum.farClipPlane, mask);
-		Plane[] planes = GeometryUtility.CalculateFrustumPlanes(frustum);
+		//Collider[] colliders = Physics.OverlapSphere(transform.position, frustum.farClipPlane, mask);
+		//Plane[] planes = GeometryUtility.CalculateFrustumPlanes(frustum);
 
-		foreach (Collider col in colliders)
-		{
-			if (col.gameObject != gameObject && GeometryUtility.TestPlanesAABB(planes, col.bounds))
-			{
-				RaycastHit hit;
-				Ray ray = new Ray();
-				ray.origin = transform.position;
-				ray.direction = (col.transform.position - transform.position).normalized;
-				ray.origin = ray.GetPoint(frustum.nearClipPlane);
+		//foreach (Collider col in colliders)
+		//{
+		//	if (col.gameObject != gameObject && GeometryUtility.TestPlanesAABB(planes, col.bounds))
+		//	{
+		//		RaycastHit hit;
+		//		Ray ray = new Ray();
+		//		ray.origin = transform.position;
+		//		ray.direction = (col.transform.position - transform.position).normalized;
+		//		ray.origin = ray.GetPoint(frustum.nearClipPlane);
 
-				if (Physics.Raycast(ray, out hit, frustum.farClipPlane, mask))
-                {
-					if (hit.collider.gameObject.CompareTag("target"))
-					{
-						zombieManager.myManager.zombieState = state.CHASE;
-					}
-				}
-				else
-				{
-					zombieManager.myManager.zombieState = state.WANDER;
-				}
-			}
-		}
+		//		if (Physics.Raycast(ray, out hit, frustum.farClipPlane, mask))
+  //              {
+		//			if (hit.collider.gameObject.CompareTag("target"))
+		//			{
+		//				zombieManager.myManager.zombieState = state.CHASE;
+		//			}
+		//		}
+		//		else
+		//		{
+		//			zombieManager.myManager.zombieState = state.WANDER;
+		//		}
+		//	}
+		//}
 	}
 
 	void chase()
@@ -77,7 +77,7 @@ public class zombieMovement : MonoBehaviour
 			zombieManager.myManager.zombieState = state.WANDER;
 		}
 
-		else if ((gameObject.transform.position - zombieManager.myManager.target.transform.position).sqrMagnitude < zombieManager.myManager.distanceToKill * zombieManager.myManager.distanceToKill)
+		else if ((gameObject.transform.position - zombieManager.myManager.target.transform.position).sqrMagnitude < zombieManager.myManager.distanceToKill * zombieManager.myManager.distanceToKill *2)
 		{
 			zombieManager.myManager.target.SetActive(false);
 			zombieManager.myManager.zombieState = state.WANDER;
