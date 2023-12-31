@@ -10,13 +10,14 @@ public class zombieManager : MonoBehaviour
     //spawn info
     [Header("Zombie Spawn Settings")]
     public static zombieManager myManager;
+    public int distanceToKill = 4;
     public GameObject zombiePrefab;
     public int numZombies = 5;
     public List<GameObject> allZombies;
     public Vector3 limits = new Vector3(5, 5, 5);
 
     //chase target
-    public Transform target;
+    public GameObject target;
 
     //settings zombies
     [Header("Zombie Wander Settings")]

@@ -27,14 +27,27 @@ namespace BBUnity.Conditions
         /// <returns>True if the magnitude between the gameobject and de target is lower that the given distance.</returns>
         public override bool Check()
         {
+            if ((gameObject.transform.position - target.transform.position).sqrMagnitude < zombieManager.myManager.distanceToKill * zombieManager.myManager.distanceToKill)
+            {
+                zombieManager.myManager.target.SetActive(false);
+                Debug.Log(target.activeInHierarchy);
+                zombieManager.myManager.zombieState = state.WANDER;
+                return false;
+            }
+
+            else if (!zombieManager.myManager.target.activeInHierarchy)
+            {
+                return false;
+            }
+
             if ((gameObject.transform.position - target.transform.position).sqrMagnitude < closeDistance * closeDistance)
             {
                 zombieManager.myManager.zombieState = state.CHASE;
             }
+
             else
             {
                 zombieManager.myManager.zombieState = state.WANDER;
-
             }
 
             return (gameObject.transform.position - target.transform.position).sqrMagnitude < closeDistance * closeDistance;

@@ -69,7 +69,18 @@ public class zombieMovement : MonoBehaviour
 		if (freqChase > zombieManager.myManager.freqMaxChase)
         {
 			freqChase -= zombieManager.myManager.freqMaxChase;
-			agent.SetDestination(zombieManager.myManager.target.position);
+			agent.SetDestination(zombieManager.myManager.target.transform.position);
+		}
+
+		if (!zombieManager.myManager.target.activeInHierarchy)
+        {
+			zombieManager.myManager.zombieState = state.WANDER;
+		}
+
+		else if ((gameObject.transform.position - zombieManager.myManager.target.transform.position).sqrMagnitude < zombieManager.myManager.distanceToKill * zombieManager.myManager.distanceToKill)
+		{
+			zombieManager.myManager.target.SetActive(false);
+			zombieManager.myManager.zombieState = state.WANDER;
 		}
 	}
 

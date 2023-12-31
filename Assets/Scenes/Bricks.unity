@@ -153,11 +153,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombieState: 0
+  distanceToKill: 4
   zombiePrefab: {fileID: 6183576328377027250, guid: f8c8d1e57662e8f418fc22aaf7a92093, type: 3}
   numZombies: 5
   allZombies: []
   limits: {x: 5, y: 5, z: 5}
-  target: {fileID: 2768927273353984389}
+  target: {fileID: 7489431298860735309}
   radius: 10
   offset: 2
   freqMaxWander: 2.5
@@ -175,7 +176,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &574408370
 GameObject:
@@ -313,7 +314,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
@@ -534,7 +535,7 @@ Transform:
   - {fileID: 2427826372610960671}
   - {fileID: 3361939519609636954}
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1766168767 stripped
 Transform:
