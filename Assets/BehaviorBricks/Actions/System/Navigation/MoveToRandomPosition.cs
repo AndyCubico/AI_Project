@@ -13,7 +13,11 @@ namespace BBUnity.Actions
     {
         private UnityEngine.AI.NavMeshAgent navAgent;
         private float freqWander = 0f;
-        private float freqMaxWander = 2.5f;
+
+        ///<value>Input maximun distance Parameter to consider that the target is close.</value>
+        [InParam("freqMaxWander")]
+        public float freqMaxWander;
+
         ///<value>Input game object Parameter that must have a BoxCollider or SphereColider, which will determine the area from which the position is extracted.</value>
         [InParam("area")]
         [Help("game object that must have a BoxCollider or SphereColider, which will determine the area from which the position is extracted")]

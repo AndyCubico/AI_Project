@@ -53,7 +53,7 @@ public class ArmyPatrolScript : MonoBehaviour
 
         for (var i = 0; i < _spawnedUnits.Count; i++)
         {
-            _spawnedUnits[i].GetComponent<NavMeshAgent>().SetDestination(ghostFollower.transform.position);
+            _spawnedUnits[i].GetComponent<NavMeshAgent>().SetDestination(ghostFollower.transform.position + _points[i]);
         }
     }
 
