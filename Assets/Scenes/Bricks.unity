@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 574408372}
   - component: {fileID: 574408371}
   m_Layer: 0
-  m_Name: ground
+  m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7816,12 +7816,12 @@ MonoBehaviour:
     colorParamsLostDefaultValue: 
     objectParams:
     - {fileID: 574408370}
-    - {fileID: 7489431298860735309}
     - {fileID: 1064628759259740112}
+    - {fileID: 7489431298860735309}
     objectParamsNames:
     - Floor
-    - target
     - Treasure
+    - Target
     objectParamsLostDefaultValue: 
     layerMaskParams: []
     layerMaskParamsNames: []

@@ -47,11 +47,9 @@ public class zombieManager : MonoBehaviour
         {
             case state.WANDER:
                 BroadcastMessage("wander", SendMessageOptions.DontRequireReceiver);
-                Debug.Log("wandering");
                 break;
             case state.CHASE:
                 BroadcastMessage("chase", SendMessageOptions.DontRequireReceiver);
-                Debug.Log("chasing");   
                 break;
             default:
                 break;
