@@ -12,7 +12,8 @@ namespace BBUnity.Actions
     public class MoveToRandomPosition : GOAction
     {
         private UnityEngine.AI.NavMeshAgent navAgent;
-
+        private float freqWander = 0f;
+        private float freqMaxWander = 2.5f;
         ///<value>Input game object Parameter that must have a BoxCollider or SphereColider, which will determine the area from which the position is extracted.</value>
         [InParam("area")]
         [Help("game object that must have a BoxCollider or SphereColider, which will determine the area from which the position is extracted")]
@@ -42,8 +43,14 @@ namespace BBUnity.Actions
         /// and otherwise it will remain in operation.</remarks>
         public override TaskStatus OnUpdate()
         {
-            if (!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance)
+            freqWander += Time.deltaTime;
+
+            if ((!navAgent.pathPending && navAgent.remainingDistance <= navAgent.stoppingDistance) || freqWander > freqMaxWander)
+            {
+                freqWander = 0f;
                 return TaskStatus.COMPLETED;
+            }
+
             return TaskStatus.RUNNING;
         }
 
