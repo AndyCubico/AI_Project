@@ -82,14 +82,14 @@ MonoBehaviour:
     <localParams />\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"0\" policy=\"ATOMIC_CHECK\"
     name=\"Perception/IsTargetClose\">\r\n      <inputParams />\r\n      <outputParams
     />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n    <ConditionEvalNode
-    id=\"10\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\" name=\"MyConditions/Is Cop Near?\">\r\n     
-    <inputParams />\r\n      <outputParams />\r\n      <localParams />\r\n    </ConditionEvalNode>\r\n   
-    <ActionNode id=\"9\" action=\"Navigation/MoveToRandomPosition\">\r\n      <inputParams>\r\n       
-    <inputValues>\r\n          <entry name=\"area\" type=\"UnityEngine.GameObject\"
+    id=\"10\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\" name=\"MyConditions/Is Cop
+    Near?\">\r\n      <inputParams />\r\n      <outputParams />\r\n      <localParams
+    />\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"9\" action=\"Navigation/MoveToRandomPosition\">\r\n     
+    <inputParams>\r\n        <inputValues>\r\n          <entry name=\"area\" type=\"UnityEngine.GameObject\"
     isBlackboard=\"True\" blackboard=\"Floor\" />\r\n          <entry name=\"freqMaxWander\"
     type=\"System.Single\" isBlackboard=\"True\" blackboard=\"freqMaxWander\" />\r\n       
     </inputValues>\r\n      </inputParams>\r\n      <outputParams />\r\n      <localParams
-    />\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"12\" policy=\"WAIT_UNTIL_TRUE_AND_COMPLETE\"
+    />\r\n    </ActionNode>\r\n    <ConditionEvalNode id=\"12\" policy=\"WAIT_UNTIL_FALSE_AND_FAIL\"
     name=\"AlwaysTrue\">\r\n      <inputParams />\r\n      <outputParams />\r\n     
     <localParams />\r\n    </ConditionEvalNode>\r\n    <ActionNode id=\"11\" action=\"Navigation/MoveToGameObject\">\r\n     
     <inputParams>\r\n        <inputValues>\r\n          <entry name=\"target\" type=\"UnityEngine.GameObject\"
