@@ -12,7 +12,6 @@ public class movement : MonoBehaviour
     private Vector3 worldTarget = Vector3.zero;
     private float freqWander = 0f;
     private float freqChase = 0f;
-    private Animator animator;
     public Vector3 hideValue = Vector3.zero;
     public Collider floor;
 
@@ -39,8 +38,6 @@ public class movement : MonoBehaviour
     {
         hidingSpots = GameObject.FindGameObjectsWithTag("hide");
         agent = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
-        animator.SetBool("walk", true);
     }
 
     // Update is called once per frame
