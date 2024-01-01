@@ -5564,7 +5564,7 @@ MonoBehaviour:
   parent: {fileID: 2859101299734867320}
   ccName: 
   useFixedUpdate: 0
-  speed: 5
+  speed: 6
   overflowControl: 0
   adjustByTotalLength: 0
   speedField: {fileID: 0}
